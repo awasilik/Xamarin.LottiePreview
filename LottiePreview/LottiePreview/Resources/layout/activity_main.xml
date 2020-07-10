@@ -13,7 +13,7 @@
     android:text="Lottie animation preview"
     android:textSize="24dp"
     android:textAlignment="center"
-    android:layout_marginTop="40dp"
+    android:layout_marginTop="48dp"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     app:layout_constraintTop_toTopOf="parent"/>
@@ -22,9 +22,9 @@
     android:id="@+id/color_button_white"
     android:layout_width="56dp"
     android:layout_height="28dp"
-    android:layout_marginBottom="4dp"
+    android:layout_marginTop="8dp"
     android:background="@drawable/color_background_white"
-    app:layout_constraintBottom_toTopOf="@+id/background"
+    app:layout_constraintTop_toBottomOf="@+id/background"
     app:layout_constraintStart_toStartOf="@+id/background"
     app:layout_constraintEnd_toStartOf="@+id/color_button_black"/>
 
@@ -71,7 +71,7 @@
     android:id="@+id/button"
     android:layout_width="match_parent"
     android:layout_height="56dp"
-    android:layout_marginBottom="16dp"
+    android:layout_marginBottom="24dp"
     android:text="Scan animation QR"
     android:textColor="#ffffff"
     app:backgroundTint="#00999d"
