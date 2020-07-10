@@ -1,5 +1,6 @@
 ﻿using System;
 using Android.App;
+using Android.Graphics;
 using Android.OS;
 using Android.Runtime;
 using Android.Views;
@@ -31,6 +32,15 @@ namespace LottiePreview
             scanButton = FindViewById<MaterialButton>(Resource.Id.button);
 
             scanButton.Click += OnScanButtonClicked;
+
+            var background = FindViewById(Resource.Id.background);
+
+            var whiteButton = FindViewById(Resource.Id.color_button_white);
+            whiteButton.Click += (s, a) => background.SetBackgroundResource(Resource.Drawable.color_background_white);
+            var blackButton = FindViewById(Resource.Id.color_button_black);
+            blackButton.Click += (s, a) => background.SetBackgroundResource(Resource.Drawable.color_background_black);
+            var transparentButton = FindViewById(Resource.Id.color_button_transparent);
+            transparentButton.Click += (s, a) => background.SetBackgroundResource(Resource.Drawable.color_background_transparent);
         }
 
         public override void OnRequestPermissionsResult(int requestCode, string[] permissions, [GeneratedEnum] Android.Content.PM.Permission[] grantResults)

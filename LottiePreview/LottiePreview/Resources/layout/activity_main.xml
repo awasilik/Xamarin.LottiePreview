@@ -19,10 +19,38 @@
     app:layout_constraintTop_toTopOf="parent"/>
 
   <View
-    android:id="@+id/border"
+    android:id="@+id/color_button_white"
+    android:layout_width="56dp"
+    android:layout_height="28dp"
+    android:layout_marginBottom="4dp"
+    android:background="@drawable/color_background_white"
+    app:layout_constraintBottom_toTopOf="@+id/background"
+    app:layout_constraintStart_toStartOf="@+id/background"
+    app:layout_constraintEnd_toStartOf="@+id/color_button_black"/>
+
+  <View
+    android:id="@+id/color_button_black"
+    android:layout_width="56dp"
+    android:layout_height="28dp"
+    android:background="@drawable/color_background_black"
+    app:layout_constraintBottom_toBottomOf="@+id/color_button_white"
+    app:layout_constraintStart_toEndOf="@+id/color_button_white"
+    app:layout_constraintEnd_toStartOf="@+id/color_button_transparent"/>
+
+  <View
+    android:id="@+id/color_button_transparent"
+    android:layout_width="56dp"
+    android:layout_height="28dp"
+    android:background="@drawable/color_background_transparent"
+    app:layout_constraintBottom_toBottomOf="@+id/color_button_white"
+    app:layout_constraintStart_toEndOf="@+id/color_button_black"
+    app:layout_constraintEnd_toEndOf="@+id/background"/>
+
+  <View
+    android:id="@+id/background"
     android:layout_width="0dp"
     android:layout_height="0dp"
-    android:background="@drawable/border_background"
+    android:background="@drawable/color_background_white"
     app:layout_constraintDimensionRatio="1:1"
     app:layout_constraintStart_toStartOf="parent"
     app:layout_constraintEnd_toEndOf="parent"
@@ -34,10 +62,10 @@
     android:layout_margin="4dp"
     android:layout_width="0dp"
     android:layout_height="0dp"
-    app:layout_constraintStart_toStartOf="@+id/border"
-    app:layout_constraintEnd_toEndOf="@+id/border"
-    app:layout_constraintTop_toTopOf="@+id/border"
-    app:layout_constraintBottom_toBottomOf="@+id/border"/>
+    app:layout_constraintStart_toStartOf="@+id/background"
+    app:layout_constraintEnd_toEndOf="@+id/background"
+    app:layout_constraintTop_toTopOf="@+id/background"
+    app:layout_constraintBottom_toBottomOf="@+id/background"/>
 
   <com.google.android.material.button.MaterialButton
     android:id="@+id/button"
