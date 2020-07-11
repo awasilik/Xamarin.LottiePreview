@@ -77,16 +77,16 @@ namespace LottiePreview
                 Toast.MakeText(this, "Not a valid QR code", ToastLength.Long).Show();
             }
         }
-        private async void OnPlayButtonClicked(object sender, EventArgs e)
+        private void OnPlayButtonClicked(object sender, EventArgs e)
         {
-
             if (animationView.Frame == 0)
             {
                 Toast.MakeText(this, "No animation loaded", ToastLength.Long).Show();
             }
-
-            animationView.PlayAnimation();
-
+            else
+            {
+                animationView.PlayAnimation();
+            }
         }
     }
 }
