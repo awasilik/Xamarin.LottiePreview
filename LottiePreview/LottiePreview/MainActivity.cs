@@ -79,18 +79,14 @@ namespace LottiePreview
         }
         private async void OnPlayButtonClicked(object sender, EventArgs e)
         {
-            try
+
+            if (animationView.Frame == 0)
             {
-                if (animationView == null)
-                {
-                    throw new InvalidOperationException();
-                }
-                animationView.PlayAnimation();
+                Toast.MakeText(this, "No animation loaded", ToastLength.Long).Show();
             }
-            catch
-            {
-                Toast.MakeText(this, "No animation", ToastLength.Long).Show();
-            }
+
+            animationView.PlayAnimation();
+
         }
     }
 }
