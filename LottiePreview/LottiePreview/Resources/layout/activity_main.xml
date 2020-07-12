@@ -55,7 +55,7 @@
     app:layout_constraintStart_toStartOf="parent"
     app:layout_constraintEnd_toEndOf="parent"
     app:layout_constraintTop_toBottomOf="@+id/title"
-    app:layout_constraintBottom_toTopOf="@+id/button"/>
+    app:layout_constraintBottom_toTopOf="@+id/playbutton"/>
 
   <com.airbnb.lottie.LottieAnimationView
     android:id="@+id/animation"
@@ -77,5 +77,16 @@
     app:backgroundTint="#00999d"
     app:cornerRadius="28dp"
     app:layout_constraintBottom_toBottomOf="parent"/>
+
+  <com.google.android.material.button.MaterialButton
+    android:id="@+id/playbutton"
+    android:layout_width="match_parent"
+    android:layout_height="56dp"
+    android:layout_marginBottom="8dp"
+    android:text="Play"
+    android:textColor="#ffffff"
+    app:backgroundTint="#00999d"
+    app:cornerRadius="28dp"
+    app:layout_constraintBottom_toTopOf="@+id/button"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

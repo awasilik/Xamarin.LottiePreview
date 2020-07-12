@@ -17,6 +17,7 @@ namespace LottiePreview
     {
         private LottieAnimationView animationView;
         private MaterialButton scanButton;
+        private MaterialButton playButton;
 
         protected override void OnCreate(Bundle savedInstanceState)
         {
@@ -29,9 +30,12 @@ namespace LottiePreview
             SetContentView(Resource.Layout.activity_main);
 
             animationView = FindViewById<LottieAnimationView>(Resource.Id.animation);
-            scanButton = FindViewById<MaterialButton>(Resource.Id.button);
 
+            scanButton = FindViewById<MaterialButton>(Resource.Id.button);
             scanButton.Click += OnScanButtonClicked;
+
+            playButton = FindViewById<MaterialButton>(Resource.Id.playbutton);
+            playButton.Click += OnPlayButtonClicked;
 
             var background = FindViewById(Resource.Id.background);
 
@@ -71,6 +75,17 @@ namespace LottiePreview
             catch
             {
                 Toast.MakeText(this, "Not a valid QR code", ToastLength.Long).Show();
+            }
+        }
+        private void OnPlayButtonClicked(object sender, EventArgs e)
+        {
+            if (animationView.Frame == 0)
+            {
+                Toast.MakeText(this, "No animation loaded", ToastLength.Long).Show();
+            }
+            else
+            {
+                animationView.PlayAnimation();
             }
         }
     }
